@@ -22,6 +22,16 @@ inquirer
         type: "input",
         name: "usage",
         message: "Provide a relative path to a video walk through of your app in use:"
+    },
+    {
+        type: "input",
+        name: "contribution",
+        message: "Where can people go to contribute?"
+    },
+    {
+        type: "input",
+        name: "functionality",
+        message: "Enter instructions to run your app:"
     }
   ])
   .then(function (data) {
@@ -29,7 +39,16 @@ inquirer
     writeFile(data.title);
     appendDescription(data.description);
     appendInstallation(data.installation);
+    appendUsage(data.usage);
+    appendContribution(data.contribution);
+    appendFunctionality(data.functionality);
   });
+
+function appendFile(output) {
+    fs.appendFile("README.md", output + "\n", function (err) {
+        if (err) throw err;
+      });
+}
 
 function writeFile(title) {
   let output = `# ${title}`;
@@ -51,14 +70,23 @@ function appendDescription(description) {
 
 function appendInstallation(installation) {
   let output =
-    "## Installation \n This app relies on certain dependencies that will need to be downloaded to successfully run it. To do this, enter the following command from your terminal:\n```"+installation+"```";
-  fs.appendFile("README.md", output + "\n", function (err) {
-    if (err) throw err;
-  });
+    "## Installation \n This app relies on certain dependencies that will need to be downloaded to successfully run it. To do this, enter the following command from your terminal:\n```\n"+installation+"\n```";
+  appendFile(output);
 }
 
 function appendUsage(usage) {
-    
+    let output = `## Usage\n[Video Walk-through]("${usage}")`
+    appendFile(output);
+}
+
+function appendContribution(contribution) {
+    let output = `## Contribute\n${contribution}`;
+    appendFile(output);
+}
+
+function appendFunctionality(functionality) {
+    let output = `## Use this App\n ${functionality}`;
+    appendFile(output);
 }
 
 // writeFile("test");
