@@ -88,6 +88,3 @@ function appendFunctionality(functionality) {
     let output = `## Use this App\n ${functionality}`;
     appendFile(output);
 }
-
-// writeFile("test");
-// appendDescription("test", testText)
