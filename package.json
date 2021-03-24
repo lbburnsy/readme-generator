@@ -1,0 +1,26 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "Dependencies for the readme generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbburnsy/readme-generator.git"
+  },
+  "keywords": [
+    "readme",
+    "generator"
+  ],
+  "author": "Luc Burns",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lbburnsy/readme-generator/issues"
+  },
+  "homepage": "https://github.com/lbburnsy/readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
