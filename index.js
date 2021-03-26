@@ -58,7 +58,7 @@ function writeFile(data) {
   "## Installation \n This app relies on certain dependencies that will need to be downloaded to successfully run it. To do this, enter the following command from your terminal:\n```\n" +
   data.installation +
   "\n```\n" +
-  `## Usage\n![Video Walk-through]("${data.usage}")\n` +
+  `## Usage\n![Video Walk-through](${data.usage})\n` +
   `## Contribute\n${data.contribution}\n` +
   `## Use this App\n ${data.functionality}\n`;
 
