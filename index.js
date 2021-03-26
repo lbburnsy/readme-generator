@@ -41,9 +41,20 @@ inquirer
   });
 
 function writeFile(data) {
+  let tableOfContents = `## Table of Contents\n
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+- [Authors](#authors)`
+
   let output =
   `# ${data.title}\n` +
-  `## Output \n ${data.description}\n` +
+  `## Description \n ${data.description}\n` +
+  `${tableOfContents}\n` +
   "## Installation \n This app relies on certain dependencies that will need to be downloaded to successfully run it. To do this, enter the following command from your terminal:\n```\n" +
   data.installation +
   "\n```\n" +
